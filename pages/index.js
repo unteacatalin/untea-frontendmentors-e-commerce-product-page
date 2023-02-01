@@ -1,8 +1,14 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import Layout from '../components/ui/layout';
 
 export default function Home() {
+  const router = useRouter();
+  useEffect(() => {
+    router.push('/1');
+  }, [router]);
   return (
     <Layout>
       <Head>
@@ -14,10 +20,10 @@ export default function Home() {
   );
 }
 
-export async function getStaticProps() {
-  return {
-    redirect: {
-      destination: '/1',
-    },
-  };
-}
+// export async function getStaticProps() {
+//   return {
+//     redirect: {
+//       destination: '/1',
+//     },
+//   };
+// }
