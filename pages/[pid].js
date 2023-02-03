@@ -333,6 +333,10 @@ function ProductDetails(props) {
     setSelectedImage(index);
   }
 
+  function handleClickModal(index) {
+    setSelectedImageModal(index);
+  }
+
   function handleAddToCart() {
     StoreCtx.addToBasket({ ...product, quantity: qty });
   }
@@ -691,7 +695,7 @@ function ProductDetails(props) {
                         selectedImageModal === idx &&
                           classes.selectedThumbnailModal
                       )}
-                      onClick={() => handleClick(idx)}
+                      onClick={() => handleClickModal(idx)}
                     />
                   </div>
                 ))}
